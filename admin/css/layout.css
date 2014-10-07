@@ -1,0 +1,198 @@
+A {
+	color: #333;
+}
+
+A:HOVER {
+	text-decoration: none;
+}
+
+A IMG {
+	border: 0;
+}
+
+
+DIV#container {
+	width: 800px;
+}
+
+
+
+DIV#header {
+	border-bottom: 2px #000 solid;
+}
+
+
+
+DIV#menu,
+DIV#content {
+	float: left;
+	padding: 10px;
+}
+
+
+
+DIV#menu {
+	border-right: 2px #000 solid;
+}
+
+	DIV#menu UL {
+		margin: 0;
+		padding: 0;
+	}
+
+	DIV#menu UL LI {
+		list-style-type: none;
+	}
+
+	DIV#menu UL LI A {
+		display: block;
+		padding: 0 4px;
+		height: 20px;
+		line-height: 20px;
+	}
+
+
+
+
+
+DIV#content HR {
+	border-width: 0 0 1px 0;
+	border-color: #444;
+	border-style: dotted;
+	
+	margin: 35px 0;
+	padding: 0;
+}
+
+	DIV#content INPUT,
+	DIV#content SELECT,
+	DIV#content TEXTAREA {
+		border-width: 1px;
+		font-size: 18px;
+		width: 300px;
+	}
+
+	DIV#content TEXTAREA {
+		font-size: 14px;
+		width: 400px;
+		height: 250px;
+	}
+
+	DIV#content .checkbox INPUT,
+	DIV#content .submit INPUT,
+	DIV#content TABLE#listing_table INPUT,
+	DIV#content SELECT#listing_sort {
+		width: auto;
+	}
+
+	
+	DIV#content DIV.error,
+	DIV#content .error INPUT,
+	DIV#content .error TEXTAREA {
+		border: 1px #f00 solid;
+	}
+
+	DIV#content DIV.error {
+		color: #f00;
+		margin: 10px 0;
+		padding: 5px;
+		font-size: 11px;
+		line-height: 15px;
+	}
+	
+	
+	DIV#content .select_date DIV,
+	DIV#content .select_date SELECT,
+
+	DIV#content .select_time DIV,
+	DIV#content .select_time SELECT,
+
+	DIV#content .select_datetime DIV,
+	DIV#content .select_datetime SELECT {
+		width: auto;
+		float: left;
+		height: 25px;
+	}
+
+
+	DIV#content .select_date DIV,
+
+	DIV#content .select_time DIV,
+
+	DIV#content .select_datetime DIV {
+		padding: 0 4px;
+		height: 25px;
+		line-height: 25px;
+	}
+
+
+
+DIV#content H3 {
+	padding: 10px 0;
+	margin: 10px 0;
+	border-width: 0 0 1px 0;
+	border-color: #444;
+	border-style: dotted;
+}
+
+DIV#content H3 SPAN {
+	padding: 5px;
+	background: #ccc;
+}
+
+
+
+TH {
+	padding: 7px 0 15px;
+}
+
+TH,TD {
+	vertical-align: top;
+}
+
+
+
+
+FORM {
+	margin: 0 0 40px;
+}
+
+
+
+TABLE#form_table {
+	width: 600px;
+}
+
+	TABLE#form_table TH {
+	}
+	
+
+
+
+TABLE#listing_table {
+	width: 600px;
+	margin: 10px 0;
+}
+
+	TABLE#listing_table TH {
+		border-bottom: 2px #000 solid;
+		padding: 0 5px;
+	}
+
+	TABLE#listing_table TD {
+		padding: 5px;
+	}
+
+	TABLE#listing_table TR.row_odd {
+		background: #ccc;
+	}
+
+
+
+
+
+
+
+
+
+
