@@ -1,0 +1,38 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+#RewriteBase /~stephenk
+
+#RewriteCond %{HTTP_HOST} !^$
+#RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteCond %{HTTPS}s ^on(s)|
+#RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteRule ^blog/([0-9]+)/?$ news.php?page_name=blog&article=$1 [L]
+RewriteRule ^blog/?$ news.php?page_name=blog [L]
+RewriteRule ^photos/([^/\.]+)/?$ photos.php?id=$1 [L]
+RewriteRule ^news/page([^/\.]+)/?$ news.php?page=$1&page_name=news [L] 
+RewriteRule ^blog/page([^/\.]+)/?$ news.php?page=$1&page_name=blog [L]
+RewriteRule ^blog/archive/?$ news.php?page_name=blog&archive=1[L]
+RewriteRule ^blog/archive/page([^/\.]+)/?$ news.php?page_name=blog&archive=1&page=$1[L]
+
+RewriteRule ^events/page([^/\.]+)/?$ events.php?page=$1 [L] 
+
+RewriteRule ^news/([^/\.]+)/?$ news.php?page_name=news&article=$1 [L]
+
+RewriteRule ^home index.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^([^/]+)/?$ $1.php [NC,L]
+
+#RewriteRule ^([^/]+)/$ $1.php 
+
+#RewriteRule ^product-([0-9]+)\.html$ products.php?id=$1
+RewriteCond %{HTTP_HOST} ^sk6ers\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.sk6ers\.com$
+RewriteRule ^(.*)$ "http\:\/\/stephenkellogg\.com\/$1" [R=301,L]
+
+ErrorDocument 404 /404.php

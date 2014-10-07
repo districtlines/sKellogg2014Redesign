@@ -1,0 +1,22 @@
+body {
+	background-color: #ffcc99;
+	background-image:url(images_splash/bg.jpg);
+	background-repeat:repeat;
+	background-position: left;
+	background-position: top;
+	 
+}
+
+img {border:none;}
+
+a {border:none;}
+
+.spacer15
+     {padding: 15px;}
+
+.spacer10
+     {padding: 10px;}
+	 
+.spacer5
+     {padding: 5px;}
+
