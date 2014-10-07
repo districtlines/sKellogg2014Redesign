@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'Trade Gothic LT Std';
+  src: url('../fonts/TradeGothicLTStd.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/TradeGothicLTStd.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/TradeGothicLTStd.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/TradeGothicLTStd.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/TradeGothicLTStd.svg#baa2b4336bfeb9872a50f10bdb06e378') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+
+
+
+html, body {
+	color: #fff;
+	background-color: #000;
+	font-family: 'Trade Gothic LT Std';
+    text-transform: uppercase;
+    	height: 100%;
+
+
+}
+
+.container {
+	background: url('../images/bg.png') no-repeat 0 0;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 100%;
+	
+}
+
+/*=========== header =========== */
+
+header{
+	margin: 50px 20px 0px;
+}
+
+header p {
+	margin-top: 10px;
+	font-size: 20px;
+	font-family: 'Trade Gothic LT Std';
+
+}
+
+header a img{
+	width: 300px;
+}
+
+
+/*============ content ============*/
+
+.content{
+	margin:0 auto;
+}
+
+
+/*=========== list ==============*/
+
+.list .dates {
+/* 	max-width: 300px; */
+	padding: 10px;
+/* 	background-color: red;	 */
+}
+
+.list .dates p:nth-child(even){
+	color: #74859d;
+}
+	
+.list .dates p{
+	margin: 0px;
+	font-size: 13px;
+	
+}
+
+
+/*============ links ============= */
+
+.links{
+ 	margin-top: 211px;
+} 
+
+.links img{
+	width: 100px;
+	margin-bottom:	10px;
+}
+
+.links a{
+	width: 100px;
+	display: block;
+	color: #fff;
+}
+
+.links span{
+	display: block;
+	width: 140px;
+}
+
+
+
+.links a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+
+
+
+/*================ Media Queries ============*/
+
+@media(max-width:400px){
+	header {
+		margin: 20px 80px 0;
+	}
+	
+	header p {
+		text-align: center;
+	
+	}
+	header a img{
+		width: 200px;
+		margin-left: 20px
+	}
+	
+	
+	
+	.list .dates p{
+		font-size: 13px;
+	}
+	
+	}
+
+@media(max-width:767px){
+	.links{
+	 	margin-top: 0px;
+	}
+	.links a{
+		margin: 10px auto;		
+	}
+}
+@media(min-width:768px){
+
+	.links{
+	 	margin-top: 0px;
+	}
+	
+	.links a{
+		margin: 10px auto;		
+	}
+	
+	.site{
+		margin-top:0px;
+	}
+	
+}
+@media(min-width:992px){
+	.content{
+		width: 80%;	
+	}
+	
+	.links{
+	 	margin-top: 211px;
+	}	
+	
+	.site{
+		margin-top:214px;
+	}
+
+}
+
+@media(min-width:1200px){}

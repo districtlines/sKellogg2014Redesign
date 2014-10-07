@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Trade Gothic LT Std';
+  src: url('TradeGothicLTStd.eot'); /* IE9 Compat Modes */
+  src: url('TradeGothicLTStd.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('TradeGothicLTStd.woff') format('woff'), /* Modern Browsers */
+       url('TradeGothicLTStd.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('TradeGothicLTStd.svg#baa2b4336bfeb9872a50f10bdb06e378') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+

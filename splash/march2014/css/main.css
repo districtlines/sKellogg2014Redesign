@@ -1,0 +1,28 @@
+body {
+	background-color: #f5ecca;
+}
+
+.graphic {
+	margin: 20px 0 0 0;
+}
+
+a,
+a:focus,
+a:active,
+a:hover,
+a:visited,
+a:link {
+	outline: none;
+}
+
+a {
+	transition: opacity 0.8s;
+}
+
+a:hover {
+	opacity: 0.8;
+}
+@media(max-width:767px){}
+@media(min-width:768px){}
+@media(min-width:992px){}
+@media(min-width:1200px){}
