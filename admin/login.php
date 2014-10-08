@@ -2,7 +2,7 @@
 	include('includes/config.php');
 	
 	
-	if ($_REQUEST['action'] == 'submit') {
+	if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'submit') {
 		$_SESSION['form_error'] = array();
 		
 		validate('username');

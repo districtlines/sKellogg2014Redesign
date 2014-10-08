@@ -10,66 +10,90 @@
 		
 		<?
 			
-			$sql = "SELECT * FROM content_pages WHERE title = 'band'";
-			
-			$query = mysql_query($sql);
-			
-			if(mysql_num_rows($query)) {
+			$all_band = $SQL->fetchAssoc("SELECT * FROM content_pages WHERE title = 'band'");
+						
+			if(count($all_band)) {
 				
-				$row = mysql_fetch_assoc($query);
+				foreach($all_band as $band){
 				
-				echo "<div class=\"article_copy\">";
-				echo strip_tags($row['body'],'<font><em><strong><br><br /><BR><hr><hr /><b><i><u><h1><h2><h3><h4><h5><h6><img><span><font><a><iframe><object><embed>');
-				echo "</div>";
+					echo "<div class=\"article_copy\">";
+					echo strip_tags($band['body'],'<font><em><strong><br><br /><BR><hr><hr /><b><i><u><h1><h2><h3><h4><h5><h6><img><span><font><a><iframe><object><embed>');
+					echo "</div>";
+				}
 			}
 			
-			$sql = "SELECT * FROM content_pages WHERE title = 'discography/music'";
+			$all_music = $SQL->fetchAssoc("SELECT * FROM content_pages WHERE title = 'discography/music'");
 			
-			$query = mysql_query($sql);
-			
-			if(mysql_num_rows($query)) {
-				$row = mysql_fetch_assoc($query);
-			}
 			
 		?>
 		<h2 class="page-title">CONTACT //</h2>
 		<div id="contact_contacts">
+
 			<?
-					$sql = "SELECT * FROM content_pages WHERE title='contact'";
-					$query = mysql_query($sql);
-					$check = mysql_num_rows($query);
-					if($check)
-					{	
-						while($row=mysql_fetch_assoc($query))
-						{
-							echo "<div class=\"user_input\">".$row['body']."</div>";
+				$contact_types= $SQL->fetchAssoc("SELECT * FROM `contact_types` ORDER BY `sort` ASC");
+										
+				if(count($contact_types)){
+					
+					foreach($contact_types as $type){
+						
+						
+						$contacts = $SQL->fetchAssoc("SELECT * FROM `contacts` WHERE `type` = ".$type['id']." ORDER BY `sort` ASC");
+						
+						if(count($contacts)){
+							echo "<div class='col-lg-4 col-xs-6 col-md-4 col-sm-4'> ";
+							echo "<h5>".$type['type']."</h5>";		
+								
+							foreach($contacts as $contact){		
+															
+								echo '<div style="margin: 10px 0 20px;">';	
+								if($contact['name'] != 'null'){ 
+									
+									if($contact['url'] != 'null' ){ 
+										echo '<a href="http://'.$contact['url'].'">'.$contact['name'].'</a>'; 										
+									}else{
+										echo '<p>'.$contact['name'].'</p>'; 
+									};
+								}
+								if($contact['company'] != 'null'){ echo '<p>'.$contact['company'].'</p>'; }
+								if($contact['phone'] != 'null'){ echo '<p>'.$contact['phone'].'</p>'; }
+								if($contact['phone_2'] != 'null'){ echo '<p>'.$contact['phone_2'].'</p>'; }
+								if($contact['email'] != 'null' ){ echo '<a href="mailto:'.$contact['email'].'">Email</a>'; }
+								
+								echo '</div>';							
+
+							}
 						}
-					}else{
-						echo "<p>No Content has been added.</p><hr />";
-					}	
-				?>
-		</div>
+						echo '</div>';
+					}
+						
+				}else{
+					echo "<p>No Contacts</p><hr />";
+				}	
+			?>		
+						
+				
+		<div class="clear"></div>
+				
 		
 		<h2 class="page-title">CAUSES //</h2>
 		<?
 			
-			$sql = "SELECT * FROM causes";
+			$all_causes = $SQL->fetchAssoc("SELECT * FROM causes");
 			
-			$query = mysql_query($sql);
 			
-			if(mysql_num_rows($query)) {
+			if(count($all_causes)) {
 				
 				echo "<ul>";
 				
-				while($row = mysql_fetch_assoc($query)) {
+				foreach($all_causes as $cause) {
 				
 					?>
 						<br>
-						<strong><?=$row['title']?></strong>
+						<strong><?=$cause['title']?></strong>
 						
-						<p class="article_copy"><?=$row['content']?></p>
+						<p class="article_copy"><?=$cause['content']?></p>
 						
-						<p><a href="<?=$row['link']?>"><?=$row['link_text']?></a></p>
+						<p><a href="<?=$cause['link']?>"><?=$cause['link_text']?></a></p>
 					
 					<?
 					

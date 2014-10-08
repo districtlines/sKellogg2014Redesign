@@ -17,7 +17,7 @@
 	
 	*/
 	function is_logged_in() {
-		if ($_SESSION['logged_in_id']) {
+		if (isset($_SESSION['logged_in_id'])) {
 			return true;
 		}
 		

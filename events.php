@@ -6,8 +6,7 @@
 	include('./includes/header.php');
 	
 	$today = strtotime(date('m/d/Y'));
-	$sql = "SELECT * FROM events WHERE date >= '{$today}' AND show_date <= NOW() ORDER BY date ASC";
-	$currentShowsRes = mysql_query($sql);
+	$currentShowsRes = $SQL->fetchAssoc("SELECT * FROM events WHERE date >= '{$today}' AND show_date <= NOW() ORDER BY date ASC");
 	
 	if(!$_GET['page']) {
 		$page = 1;
@@ -19,17 +18,19 @@
 	$limit = 6;
 	$start = ($page - 1) * $limit;
 	$sql = "SELECT * FROM events WHERE date < '{$today}' AND show_date <= NOW() ORDER BY date DESC";
-	$query = mysql_query($sql) or die(mysql_error());
-	$check = mysql_num_rows($query);
+	$query = $SQL->fetchAssoc($sql);
+	$check = count($query);
 	$total_pages = ceil( $check / $limit );
 	
 	if ($page > $total_pages && $total_pages) {
 		$page = $total_pages;
 	}
 	
+	var_dump(array($page,$limit,$check));
+	
 	$sql .= " LIMIT $start, $limit";
 	
-	$pastShowsRes = mysql_query($sql);
+	$pastShowsRes = $SQL->fetchAssoc($sql);
 ?>
 <style>
 	body {
@@ -53,7 +54,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<?php while($event = mysql_fetch_assoc($currentShowsRes)) { ?>
+		<?php foreach($currentShowsRes as $event) : ?>
 		<tr class="table-tooltip" data-toggle="tooltip" data-placement="left" title="Click to view more data!" data-details="<?php echo $event['id']; ?>">
 			<td><?php echo date('m/d/Y',$event['date']);?></td>
 			<td>
@@ -88,7 +89,7 @@
 				<?php echo nl2br(strip_tags($event['details'])); ?>
 			</td>
 		</tr>
-		<?php } ?>
+		<?php endforeach; ?>
 	</tbody>
 </table>
 </div>
@@ -105,7 +106,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<?php while($event = mysql_fetch_assoc($pastShowsRes)) { ?>
+		<?php foreach($pastShowsRes as $event) : ?>
 		<tr class="table-tooltip" data-toggle="tooltip" data-placement="left" title="Click to view the setlist!" data-details="<?php echo $event['id']; ?>">
 			<td><?php echo date('m/d/Y',$event['date']);?></td>
 			<td>
@@ -121,7 +122,7 @@
 				<?php echo $event['setlist']; ?>
 			</td>
 		</tr>
-		<?php } ?>
+		<?php endforeach; ?>
 	</tbody>
 </table>
 </div>

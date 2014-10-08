@@ -17,6 +17,7 @@
 <link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.2.0/font-awesome-4.2.0/css/font-awesome.css">
 <link href="/css/style.css" rel="stylesheet" type="text/css" media="all">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 
 <!-- END: STYLESHEET -->
 
@@ -24,6 +25,9 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
 	<script type="text/javascript" src="/js/respond-1.1.0.min.js"></script>
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<script type="text/javascript" src="/js/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+	
 <!-- END: SCRIPTS -->
 </head>
 

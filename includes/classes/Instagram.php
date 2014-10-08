@@ -1,5 +1,5 @@
 <?php
-	class Instagram {
+	class Instagram extends Site {
 		
 		public $apiUrl = 'https://api.instagram.com/v1/users/356683473/media/recent/?client_id=11a49a1c2dba429c8576ae60d751d8b5';
 		public $feed;

@@ -10,57 +10,54 @@
 		
 		<?php
 						
-			$sql = "SELECT * FROM music WHERE show_date <= NOW() ORDER BY release_date DESC";
-			$query = mysql_query($sql) or die(mysql_error());
-			$check = mysql_num_rows($query);
-			
+			$all_music = $SQL->fetchAssoc("SELECT * FROM music WHERE show_date <= NOW() ORDER BY release_date DESC");
+			$check = count($all_music);
 			if($check) {
-				while($row = mysql_fetch_assoc($query)) :
-				
+				foreach($all_music as $music):				
 		?>
 		
-		<div id="album-<?=$row['id']?>" class="album">
+		<div id="album-<?=$music['id']?>" class="album">
 			<div class="album_art">
-				<img width="300px" src="<?= ROOT ?>/uploads/music/<?=$row['id'];?>/thumb_<?=$row['album_cover'];?>" />
+				<img width="300px" src="<?= ROOT ?>/uploads/music/<?=$music['id'];?>/thumb_<?=$music['album_cover'];?>" />
 				
 			</div>
 			
 			<div class="tracks">
-				<h2 class="album_name"><?=$row['name'];?></h2>
-				<span class="release_date">Release Date: <?= date('m/d/Y', strtotime($row['release_date']));?></span>
+				<h2 class="album_name"><?=$music['name'];?></h2>
+				<span class="release_date">Release Date: <?= date('m/d/Y', strtotime($music['release_date']));?></span>
 				
 				<div class="clear"></div>
 				<?php
-					if($row['download_link']) {
+					if($music['download_link']) {
 				?>
 				
-				<a class="btn btn-sm btn-default" href="<?=$row['download_link'];?>" target="_blank">Download</a>
+				<a class="btn btn-sm btn-default" href="<?=$music['download_link'];?>" target="_blank">Download</a>
 				
 				<?php
 					}
 				?>
 				
 				<?php
-					if($row['itunes_link']) {
+					if($music['itunes_link']) {
 				?>
 				
-				<a class="btn btn-sm btn-default" href="<?=$row['itunes_link'];?>" target="_blank">iTunes</a>
+				<a class="btn btn-sm btn-default" href="<?=$music['itunes_link'];?>" target="_blank">iTunes</a>
 				
 				<?php
 					}
-					$sqlTracks = "SELECT * FROM tracks WHERE album_id = ".$row['id']." ORDER BY sort DESC";
-					$queryTracks = mysql_query($sqlTracks) or die(mysql_error());
-					$checkTracks = mysql_numrows($queryTracks);
+					$Tracks = $SQL->fetchAssoc("SELECT * FROM tracks WHERE album_id = ".$music['id']." ORDER BY sort DESC");
+					//$queryTracks = mysql_query($sqlTracks) or die(mysql_error());
+					$checkTracks = count($Tracks);
 					
 					$track_array = array();
 					
 					if($checkTracks) {
 						
-						echo "<a class=\"btn btn-sm btn-default\" href=\"listen-". $row['id'] ."\" class=\"listen-link\">Listen</a>";
+						echo "<a class=\"btn btn-sm btn-default\" href=\"listen-". $music['id'] ."\" class=\"listen-link\">Listen</a>";
 						
 						echo "<div class=\"clear\"></div>";
 					
-						while($tracks = mysql_fetch_assoc($queryTracks)) {
+						foreach($Tracks as $tracks) {
 							$track_array[] = array(
 								'name' => stripslashes($tracks['name']),
 								'embed_code' => $tracks['embed_code']
@@ -68,7 +65,7 @@
 						} //endwhile $tracks = mysql....
 					?>
 
-						<div id="tracks-<?= $row['id'] ?>">
+						<div id="tracks-<?= $music['id'] ?>">
 							<ul>
 						<?php		
 							foreach ($track_array AS $track) {
@@ -80,7 +77,7 @@
 						?>
 							</ul>
 						</div>
-						<div id="listen-<?= $row['id'] ?>" style="display: none;">
+						<div id="listen-<?= $music['id'] ?>" style="display: none;">
 							<ul>
 							<?php
 							foreach ($track_array AS $track) {
@@ -106,7 +103,7 @@
 		</div>
 		
 		<?php
-				endwhile;
+				endforeach;
 			} else {
 				echo "<h2>Sorry there is currently no albums. Check back soon!</h2>";
 			}

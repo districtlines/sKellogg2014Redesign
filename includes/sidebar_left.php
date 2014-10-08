@@ -1,7 +1,4 @@
-<?php
-require_once('includes/Instagram.php');
-$instagram = new Instagram;
-?>
+<?php $instagram = $Site->Instagram; ?>
 <div class="main_contentinleft col-lg-3 col-md-3 col-sm-3 col-xs-12">
 	<div class="twittercontent">
 		<a class="twitter-timeline" width="263" href="https://twitter.com/Stephen_Kellogg" data-widget-id="319296738567520256">Tweets by @Stephen_Kellogg</a>
@@ -12,10 +9,22 @@ $instagram = new Instagram;
 		<div class="row">
 			<?php $count=0; foreach ($instagram->feed->data as $k => $v) { if($count==4) {break;}?>
 			<div class="col-xs-6">
-				<img src="<?php echo $v->images->standard_resolution->url; ?>" class="img-responsive">
+				<a class="fancybox-media" href="<?php echo $v->images->standard_resolution->url; ?>"><img src="<?php echo $v->images->standard_resolution->url; ?>" class="img-responsive"></a>
 			</div>
 			<?php ++$count; } ?>
 		</div>
 	</div>
 	<span class="clear"></span>
 </div>
+
+
+<script type="text/javascript">
+	$('.fancybox-media').fancybox({
+		openEffect  : 'none',
+		closeEffect : 'none',
+		helpers : {
+			media : {}
+		}
+	});
+
+</script>

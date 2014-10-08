@@ -1,6 +1,6 @@
 <?php
 	include('includes/ParseXML.php');
-	class Merch {
+	class Merch extends Site {
 		public $img_path;
 		public $product_path;
 		public $api_url;
