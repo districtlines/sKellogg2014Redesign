@@ -61,7 +61,7 @@
 				</a>
 			</td>
 			<td><?php echo $event['city']; ?></td>
-			<td><?php echo $event['age']; ?></td>
+			<td><?php if($event['age'] == 'null'){ echo " "; }else{ echo $event['age']; } ?></td>
 			<td><?php echo date('g:ia', $event['time']); ?></td>
 			<td><?php echo date('g:ia', $event['door_time']); ?></td>
 			<td>
