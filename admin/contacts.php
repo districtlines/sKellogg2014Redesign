@@ -13,12 +13,12 @@
 		
 		$_SESSION['form_error'] = array();
 	
-		validate('name');
-		validate('company');
-		validate('phone');
+		validate('name',false);
+		validate('company',false);
+		validate('phone',false);
 		validate('phone_2', false);
-		validate('email');
-		validate('url');
+		validate('email',false);
+		validate('url',false);
 		validate('type');
 		validate('sort', false);
 		
