@@ -25,9 +25,7 @@
 	if ($page > $total_pages && $total_pages) {
 		$page = $total_pages;
 	}
-	
-	var_dump(array($page,$limit,$check));
-	
+		
 	$sql .= " LIMIT $start, $limit";
 	
 	$pastShowsRes = $SQL->fetchAssoc($sql);
