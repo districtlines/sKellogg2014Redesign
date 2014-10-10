@@ -36,6 +36,7 @@
 	}
 </style>
 <h2 class="page-title">TOUR DATES //</h2>
+
 <div class="event-page">
 	<div class="table-responsive">
 	<table id="current-shows" class="table table-striped">
@@ -77,6 +78,9 @@
 					<?php if($event['fb_event_url']) { ?>
 					<a class="btn btn-default btn-xs <?=$event['soldout'] ? 'sold-out' : '';?>" target="_blank" href="<?=$event['fb_event_url'];?>">RSVP</a>
 					<?php } ?>
+
+					<a class="btn btn-default btn-xs" target="_blank" href="<?php echo SIXERTOWN_URL; ?>">VIP</a>
+
 					<a class="twittericon" href="http://twitter.com/share?url=<?=ROOT?>/events/#events-<?=$event['id']?>&text=Stephen Kellogg site news was updated."><i class="fa fa-twitter"></i></a>
 					<a class="facebookicon" href="http://www.facebook.com/sharer.php?u=<?=ROOT?>/events/#events-<?=$event['id']?>"><i class="fa fa-facebook"></i></a>
 				</td>
