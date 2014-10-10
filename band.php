@@ -105,7 +105,7 @@
 			
 		?>
 	</div><!-- article -->
-	
+	</div>
 	</div>
 
 <? include('includes/footer.php'); ?>

@@ -10,7 +10,7 @@
 			<div class="row">
 				<?php foreach($merch->merchItems as $product) { ?>
 				<div class="col-xs-6 product">
-					<a href="<?php echo $merch->product($product); ?>" target="_blank"><img class="img-responsive" src="<?= $merch->image($product['PRODUCT_ID'],$product['IMAGE'],'browse_') ?>" alt="<?=$product['PRODUCT']?>" /></a>
+					<a href="<?php echo $merch->product($product); ?>" target="_blank" class="thumbnail"><img class="img-responsive" src="<?= $merch->image($product['PRODUCT_ID'],$product['IMAGE'],'browse_') ?>" alt="<?=$product['PRODUCT']?>" /></a>
 				</div>
 				<?php } ?>
 			</div>
@@ -23,7 +23,7 @@
 			<h2>WATCH STEPHEN'S TED TALK //</h2>
 			<div class="video">
 				<a class="youtube" href="<?=$youtube['url']?>">
-					<img src="<?=$youtube['photo']?>" width="238"  class="img-responsive" height="134" alt="img">
+					<img src="<?=$youtube['photo']?>" class="img-responsive" alt="img">
 					<span class="play"><img src="/images/playbt.png" width="50" height="50" alt="Play" title="Play"></span>
 				</a>
 			</div>

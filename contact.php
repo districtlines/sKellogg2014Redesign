@@ -196,9 +196,11 @@
 				?>
 		</div>
 	</div>
+</div>
 
 </div><!-- end leftCntr -->
 
+ 
 <script type="text/javascript">
 $(document).ready(function() {
 	$(".desc_btn").click(function() {
@@ -220,6 +222,6 @@ $(document).ready(function() {
 });
 </script>
 				
-<? include('./includes/sidebar.php'); ?>
+<!-- <? include('./includes/sidebar.php'); ?> -->
 
 <? include('./includes/footer.php'); ?>

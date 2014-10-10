@@ -53,7 +53,7 @@
 					
 					if($checkTracks) {
 						
-						echo "<a class=\"btn btn-sm btn-default\" href=\"listen-". $music['id'] ."\" class=\"listen-link\">Listen</a>";
+						echo "<a class=\"btn btn-sm btn-default listen-btn \" data-listen_id=\"listen-". $music['id'] ."\">Listen</a>";
 						
 						echo "<div class=\"clear\"></div>";
 					
@@ -116,10 +116,10 @@
 
 	$(document).ready(function(){
 	
-		$('.listen_btn').click(function(){
-		
-			var id = $(this).attr('href').substr(7);
+		$('.listen-btn').click(function(){
 			
+			var id = $(this).data('listen_id').substr(7);
+						
 			if ($('#listen-'+id).css('display') == 'none') {
 		
 				$('#tracks-'+id).hide();
@@ -141,5 +141,6 @@
 	});
 
 </script>
+
 
 <? include('./includes/footer.php'); ?>

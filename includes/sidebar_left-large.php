@@ -12,7 +12,7 @@
 			<div class="row">
 				<?php $count=0; foreach ($instagram->feed->data as $k => $v) { if($count==4) {break;}?>
 				<div class="col-xs-6">
-					<a class="fancybox-media" href="<?php echo $v->images->standard_resolution->url; ?>"><img src="<?php echo $v->images->standard_resolution->url; ?>" class="img-responsive"></a>
+					<a class="fancybox-media thumbnail" href="<?php echo $v->images->standard_resolution->url; ?>"><img src="<?php echo $v->images->standard_resolution->url; ?>" class="img-responsive"></a>
 				</div>
 				<?php ++$count; } ?>
 			</div>

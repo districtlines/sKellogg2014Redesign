@@ -80,7 +80,7 @@ width: 37.666667% !important;
 iframe[id^='twitter-widget-']				{width:100% !important;}
 
 .instagramcontent							{padding:15px;background:url(../images/trans.png) repeat;}
-.instagramcontent .col-xs-6					{padding-left: 5px;padding-right: 5px;}
+.instagramcontent .col-xs-6  				{padding-left: 5px;padding-right: 5px;}
 .instagramcontent .col-xs-6:nth-child(1)	{margin-bottom: 10px;}
 .instagramcontent .col-xs-6:nth-child(2)	{margin-bottom: 10px;}
 .instagramcontent .row						{margin-left: -5px;margin-right: -5px;}
@@ -109,9 +109,10 @@ h2.page-title								{font-family: 'Open Sans', sans-serif; font-size:14px; colo
 .skmerchcontentin							{ background:url(../images/trans.png) repeat;padding:15px; }
 .skmerchcontentin h2						{font-family: 'Open Sans', sans-serif; font-size:14px; color:#811113; line-height:14px; margin:0; padding:0 0 9px 0; display:block; font-weight:600;}
 .skmerchcontentin .product					{margin-bottom: 10px;}
+.skmerchcontentin .col-xs-6					{padding-left: 10px;padding-right: 10px;}
 
 
-.videocontent								{padding:4.3% 1.4% 5% 4.7%; background:#ffffff;}
+.videocontent								{padding:1.4% 4.7% 5% ; background:#ffffff;}
 .videocontent h2							{font-family: 'Open Sans', sans-serif; font-size:14px; color:#811113; line-height:14px; margin:0; padding:0 0 7px 0; display:block; font-weight:600;}
 .video										{position:relative;}
 .video .play								{margin:0; padding:0; display:block; position:absolute; left: 37.9%; top: 31%;}
@@ -123,6 +124,7 @@ h2.page-title								{font-family: 'Open Sans', sans-serif; font-size:14px; colo
 
 
 .widget										{margin-bottom: 10px;}
+.thumbnail									{margin-bottom: 0}
 /* ---------------------------------------------------------*/
 
 .music-page {}
@@ -152,7 +154,7 @@ body										{background-attachment:fixed; height:100%; }
 .newscontent .sale a						{font-size:20px;}
 .skmerchcontentin ul li						{width:94px;}
 #logo										{left: 36.8%;}
-.videocontent								{padding:8.3% 4% 8% 4.7%;}
+.videocontent								{padding:8.3% 4.7% 8%;}
 .videocontent h2							{font-size:13px;}
 .skmerchcontentin							{padding: 8.3% 4% 6% 4.7%;}
 .campaign									{padding: 7.5% 4% 5% 4.7%;}
@@ -297,7 +299,7 @@ body										{background-attachment:fixed; height:100%; }
 .main_contentinleft							{}
 .share ul									{float:right !important;}
 .skmerchcontentin ul li.listin1 			{ margin:0 5px 9px; }
-.skmerchcontentin ul li.listin				 { margin:0 5px 10px 0;}
+.skmerchcontentin ul li.listin				{ margin:0 5px 10px 0;}
 .videocontent								{padding:5%;}
 .video										{width:100%;}
 .video img									{width:100%; height:auto;}
