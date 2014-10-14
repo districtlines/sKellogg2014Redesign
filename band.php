@@ -5,7 +5,8 @@
 	$layout = 'large-left-col';
 	include('./includes/header.php');
 ?>
-	<h2 class="page-title">BIO //</h2>
+	<!--
+<h2 class="page-title">BIO //</h2>
 	<div class="article">
 		
 		<?
@@ -26,6 +27,7 @@
 			
 			
 		?>
+-->
 		<h2 class="page-title">CONTACT //</h2>
 		<div id="contact_contacts">
 
@@ -75,7 +77,8 @@
 		<div class="clear"></div>
 				
 		
-		<h2 class="page-title">CAUSES //</h2>
+		<!--
+<h2 class="page-title">CAUSES //</h2>
 		<?
 			
 			$all_causes = $SQL->fetchAssoc("SELECT * FROM causes");
@@ -104,7 +107,8 @@
 			}
 			
 		?>
-	</div><!-- article -->
+-->
+<!-- 	</div> --><!-- article -->
 	</div>
 	</div>
 
