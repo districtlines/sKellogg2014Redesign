@@ -3,7 +3,7 @@
 	$youtube = $Site->youtube();
 ?>
 
-<div class="skmerchcontent col-lg-3 col-md-3 col-sm-4">
+<div class="skmerchcontent">
 	<div class="widget-bg">
 		<div class="skmerchcontentin widget">
 			<h2>SK MERCH //</h2>
@@ -14,7 +14,6 @@
 				</div>
 				<?php } ?>
 			</div>
-			<span class="clear"></span>
 		</div>
 	</div>
 	

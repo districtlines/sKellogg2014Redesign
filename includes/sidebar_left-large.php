@@ -1,5 +1,5 @@
 <?php $instagram = $Site->Instagram; ?>
-<div class="main_contentinleft col-lg-3 col-md-3 col-sm-4">
+<div class="main_contentinleft">
 	<div class="widget-bg">
 		<div class="twittercontent widget">
 			<a class="twitter-timeline" width="263" href="https://twitter.com/Stephen_Kellogg" data-widget-id="319296738567520256">Tweets by @Stephen_Kellogg</a>
