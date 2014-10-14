@@ -118,7 +118,7 @@ h2.page-title								{font-family: 'Open Sans', sans-serif; font-size:14px; colo
 .video										{position:relative;}
 .video .play								{margin:0; padding:0; display:block; position:absolute; left: 37.9%; top: 31%;}
 
-.campaign									{padding:3.5% 1.4% 3% 4.7%; background:url(../images/trans.png) repeat; margin: 10px 0 0 0;}
+.campaign									{padding:3.5% 1.4% 3% 4.7%; background:url(../images/trans.png) repeat; }
 .campaign h2								{font-family: 'Open Sans', sans-serif; font-size:14px; color:#811113; line-height:14px; margin:0; padding:0 0 2px 0; display:block; font-weight:600;}
 .campaign a									{margin:0; padding:0; display:block; }
 .campaign a	img								{margin:0; padding:0; display:block; }

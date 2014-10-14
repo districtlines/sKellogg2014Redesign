@@ -29,12 +29,12 @@
 			</div>
 		</div>
 	</div>
-		
-	<div class="campaign hide">
-		<h2>CHECK OUT SK'S CAMPAIGN //</h2>
-		<a href="#"><img class="img-responsive" src="/images/pledgemusic.png" width="199" height="29" alt="Pledge music" title="Pledge music"></a>
+	<div class="widget-bg">		
+		<div class="campaign widget">
+			<h2>CHECK OUT SK'S CAMPAIGN //</h2>
+			<a href="#"><img class="img-responsive" src="/images/pledgemusic.png" width="199" height="29" alt="Pledge music" title="Pledge music"></a>
+		</div>
 	</div>
-
 </div>
 
 
