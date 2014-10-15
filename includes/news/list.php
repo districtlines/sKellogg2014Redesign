@@ -11,8 +11,8 @@
 	$maxRecords = $maxRecords['pageCount'];
 	
 	$maxPages = ceil($maxRecords/$limit);
-
-	$offset = $page*$limit;
+	
+	$offset = $page == '1' ? 0 : $page*$limit;
 	
 	$all_news = $SQL->fetchAssoc("SELECT
 			*
