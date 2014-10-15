@@ -5,6 +5,14 @@
 	$layout = 'large-left-col';
 	include('./includes/header.php');
 ?>
+<style type="text/css">
+	body {
+		background: url("/images/recordcollection.jpg") no-repeat fixed center center;
+		background-size: cover; 
+
+	}
+</style>
+
 	<h2 class="page-title">MUSIC //</h2>
 	<div class="music-page">
 		

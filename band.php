@@ -1,10 +1,18 @@
 <?php
-	$active = 'home';
-	$pageTitle = 'Events';
-	$curr_page = 'events';
+	$active = 'band';
+	$pageTitle = 'Contact';
+	$curr_page = 'contact';
 	$layout = 'large-left-col';
 	include('./includes/header.php');
 ?>
+
+<style type="text/css">
+	body {
+		background: url("/images/Old-book5.jpg") no-repeat fixed center center;
+		background-size: cover; 
+
+	}
+</style>
 	<!--
 <h2 class="page-title">BIO //</h2>
 	<div class="article">
