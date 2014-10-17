@@ -27,6 +27,8 @@
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 	<script type="text/javascript" src="/js/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+	<script type="text/javascript" src="http://isotope.metafizzy.co/v1/jquery.isotope.min.js"></script>
+
 	
 <!-- END: SCRIPTS -->
 </head>

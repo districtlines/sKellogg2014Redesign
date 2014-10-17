@@ -1,62 +1,174 @@
-<? $active = 'home'; ?>
-<? $curr_page = 'media'; ?>
-<? $pageTitle = 'Photos'; ?>
-<? $album_id = $_GET['id']; ?>
-<? include('./includes/header.php'); ?>
-
-	<div class="media">
+<?php
+	$active = 'home';
+	$pageTitle = 'Photos';
+	$curr_page = 'photos';
+	$layout = 'large-left-col';
+	include('./includes/header.php');
 	
-		<h2 class="heading header_left">PHOTO ALBUMS</h2>
-		
-		<a class="back_to_albums button_right" href="<?= ROOT ?>/media">Back to Albums</a>
-		
-		<div class="clear"></div>
-		
-		<?php
-			$sql = "SELECT * FROM photos WHERE album_id = ".$album_id." ORDER BY sort ASC";
-			$query = mysql_query($sql) or die(mysql_error());
-			$check = mysql_num_rows($query);
-			$count = 0;
-			
-			if($check) {
-				while($row = mysql_fetch_assoc($query)) :
-					$count ++;
-					
-		?>
-		
-			<div class="palbum_cover <?=$count % 3 == 0 ? 'last' : 'first';?> single_photo">
-				<a href="<?=ROOT?>/uploads/photos/<?=$row['id'];?>/<?=str_replace('full_', '', $row['photo']);?>" title="<?=$row['name']?>" rel="group" >
-					<img src="<?=ROOT?>/uploads/photos/<?=$row['id'];?>/<?=$row['thumbnail'];?>" />
-				</a>
-				<? /*<p><?=strlen($row['name']) >= 17 ? substr($row['name'], 0, 16)."..." : $row['name'];?></p> */?>
-			</div>
-		<?php
-				if($count % 3 == 0) {
-					echo '<div class="clear"></div>';
-				}
-				
-				endwhile;
-				
-				if ($count % 3 != 0) {
-					echo '<div class="clear"></div>';
-				}
-				echo "<a class=\"back_to_albums\" href=\"". ROOT . '/media' ."\">Back to Albums</a>";
-				
-			} else {
-				echo "<h2>Sorry there is currently no photos. Check back soon!</h2>";
-			}
-		?>
-		
-	</div>
+	$photos = $SQL->fetchAssoc("SELECT * FROM photos ORDER BY RAND()");
+	
 
-</div><!-- end leftCntr -->
+?>
+
+<h2 class="page-title">PHOTOS //</h2>
+
+<div class="photos-page">
+	<div id="container">
+<?php	foreach($photos as $p){ 
+	
+		if(file_exists($_SERVER['DOCUMENT_ROOT']."/uploads/photos/".$p['id']."/".$p['thumbnail']) && file_exists( $_SERVER['DOCUMENT_ROOT']."/uploads/photos/".$p['id']."/".$p['photo']) ){
+?>
+		
+			<div class="item">
+				<img class="thumb" width="100%" height="100%" src="<?=ROOT?>/uploads/photos/<?=$p['id'];?>/<?=$p['thumbnail'];?>" />
+				<img class="full hide" width="100%" height="100%" src="<?=ROOT?>/uploads/photos/<?=$p['id'];?>/<?=$p['photo'];?>" />		
+			</div>
+		
+
+<?php 	} } ?>
+	
+	</div>
+</div>
+</div>
+
+
+<?php include('./includes/footer.php'); ?>
+
+<style>
+#container {
+	height: 1500px;
+}
+
+.item{
+	margin-bottom: 10px;
+	width: 187px;
+	height: 133px;
+}
+
+.item.large {
+  height: 423px;
+  width: 577px;
+  z-index: 10;
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+          transition-property:         transform, opacity;
+}
+</style>
 
 <script type="text/javascript">
-$(document).ready(function() {
-	$(".palbum_cover a").fancybox();
-});
-</script>
-				
-<? include('./includes/sidebar.php'); ?>
 
-<? include('./includes/footer.php'); ?>
+/*
+$(function(){
+  var $container = $('#container'),
+      $items = $('.item');
+  
+  $container.isotope({
+    itemSelector: '.item',
+    layoutMode : 'fitRows',
+    masonry: {
+      columnWidth: 60
+    },
+    resizesContainer : false,
+    getSortData : {
+      fitOrder : function( $item ) {
+        var order,
+            index = $item.index();
+        
+        if ( $item.hasClass('large') && index % 2 ) {
+          order = index + 1.5;
+        } else {
+          order = index;
+        }
+        return order;
+      }
+    },
+    sortBy : 'selected'
+
+  });
+  
+  $items.click(function(){
+    var $this = $(this);
+    // nothing to change if this already has large class
+    if ( $this.hasClass('large') ) {
+      return;
+    }
+    var $previousLargeItem = $items.filter('.large');
+    
+    $previousLargeItem.removeClass('large');
+    $this.addClass('large');
+
+    $container
+      // update sort data on changed items
+      .isotope('updateSortData', $this )
+      .isotope('updateSortData', $previousLargeItem )
+      // trigger layout and sort
+      .isotope();
+  });
+});
+*/
+
+$(function(){
+  
+  
+  var $container = $('#container'),
+      $items = $('.item');
+  
+  $container.isotope({
+    itemSelector: '.item',
+    masonry: {
+      columnWidth: 15
+    },
+    getSortData : {
+      selected : function( $item ){
+        return ($item.hasClass('selected') ? -1000 : 0 ) + $item.index();
+      }
+    },
+    sortBy : 'selected'
+  })
+  
+  $items.click(function(){
+    var $this = $(this);
+
+    var $previousSelected = $('.large');
+    if ( !$this.hasClass('large') ) {
+		$this.addClass('large');
+		
+		$this.find('.thumb').toggleClass("hide");
+		$this.find('.full').toggleClass("hide");
+    }
+
+    $previousSelected.removeClass('large');
+	
+    $container
+      .isotope( 'updateSortData', $this )
+      .isotope( 'updateSortData', $previousSelected )
+      .isotope();
+    
+  });
+
+});
+
+</script>
