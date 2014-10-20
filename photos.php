@@ -5,7 +5,7 @@
 	$layout = 'large-left-col';
 	include('./includes/header.php');
 	
-	$photos = $SQL->fetchAssoc("SELECT * FROM photos ORDER BY RAND()");
+	$photos = $SQL->fetchAssoc("SELECT * FROM photos ORDER BY RAND() LIMIT 50");
 	
 
 ?>
@@ -35,47 +35,7 @@
 <?php include('./includes/footer.php'); ?>
 
 <style>
-#container {
-	height: 1500px;
-}
 
-.item{
-	margin-bottom: 10px;
-	width: 187px;
-	height: 133px;
-}
-
-.item.large {
-  height: 423px;
-  width: 577px;
-  z-index: 10;
-}
-
-.item:hover {
-  cursor: pointer;
-}
-
-/**** Isotope CSS3 transitions ****/
-
-.isotope,
-.isotope .isotope-item {
-  -webkit-transition-duration: 0.8s;
-     -moz-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-
-}
-
-.isotope {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-          transition-property: height, width;
-}
-
-.isotope .isotope-item {
-  -webkit-transition-property: -webkit-transform, opacity;
-     -moz-transition-property:    -moz-transform, opacity;
-          transition-property:         transform, opacity;
-}
 </style>
 
 <script type="text/javascript">
@@ -153,14 +113,21 @@ $(function(){
     var $this = $(this);
 
     var $previousSelected = $('.large');
+    
     if ( !$this.hasClass('large') ) {
 		$this.addClass('large');
-		
-		$this.find('.thumb').toggleClass("hide");
-		$this.find('.full').toggleClass("hide");
+	
+	   $this.find('.thumb').toggleClass("hide");
+	   $this.find('.full').toggleClass("hide");
     }
+    
+	$previousSelected.find('.thumb').toggleClass("hide");
+	$previousSelected.find('.full').toggleClass("hide");	
 
     $previousSelected.removeClass('large');
+	
+	var p = $this.position();
+	$(window).scrollTop(p.top);
 	
     $container
       .isotope( 'updateSortData', $this )

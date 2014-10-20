@@ -183,6 +183,59 @@ h2.page-title								{font-family: 'Open Sans', sans-serif; font-size:14px; colo
 
 #contact_contacts li { display: block; float: left; width: 203px; min-height: 120px; margin: 0 0 10px 0; }
 
+
+
+/*-------------- Photos Isotope*/
+#container {
+	height: 1500px;
+}
+
+.item{
+	margin-bottom: 10px;
+	width: 187px;
+	height: 133px;
+}
+
+.item.large {
+  height: 423px;
+  width: 577px;
+  z-index: 10;
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+
+
+.item > img{
+	position:absolute;
+}
+
+
+
 /* ------------------ Responsive HERE --------------------------*/
 @media only screen and (min-width:1024px) and (max-width:1200px){
 	
@@ -227,7 +280,7 @@ body										{background-attachment:fixed; height:100%; }
 .main_contentinleft							{}
 .main_contentinright 						{width:100% !important;  float:none !important;}
 .skmerchcontent								{}
-#nav ul li									{margin: 0 9px 0 0;  padding: 0 0 0 9px;}
+#nav ul li									{margin: 0 7px 0 0;  padding: 0 0 0 7px;}
 .share ul									{padding: 0 0 0 5%;}
 .newscontent .sale							{width:auto; font-size:20px;}
 .newscontent .sale a						{font-size:20px;}
@@ -451,7 +504,7 @@ body										{background-attachment:fixed; height:100%; }
 .clearin									{display:block !important;}
 .main_contentin 							{padding: 20px 0 25px 0;}
 
-
+.item										{width: 279px !important ;height: 200px !important;}
 	
 }
 
@@ -459,17 +512,16 @@ body										{background-attachment:fixed; height:100%; }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* ---------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
 
 
