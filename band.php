@@ -40,7 +40,7 @@
 		<div id="contact_contacts">
 
 			<?
-				$contact_types= $SQL->fetchAssoc("SELECT * FROM `contact_types` ORDER BY `sort` ASC");
+				$contact_types= $SQL->fetchAssoc("SELECT * FROM `contact_types` WHERE `show` = 1 ORDER BY `sort` ASC");
 										
 				if(count($contact_types)){
 					
@@ -51,7 +51,7 @@
 						
 						if(count($contacts)){
 							echo "<div class='col-lg-4 col-xs-6 col-md-4 col-sm-4'> ";
-							echo "<h5>".$type['type']."</h5>";		
+							echo "<p class='contact-type'>".$type['type']."</p>";		
 								
 							foreach($contacts as $contact){		
 															
@@ -59,7 +59,7 @@
 								if($contact['name'] != 'null'){ 
 									
 									if($contact['url'] != 'null' ){ 
-										echo '<a href="http://'.$contact['url'].'">'.$contact['name'].'</a>'; 										
+										echo '<p><a href="http://'.$contact['url'].'" target="_blank">'.$contact['name'].'</a></p>'; 										
 									}else{
 										echo '<p>'.$contact['name'].'</p>'; 
 									};
