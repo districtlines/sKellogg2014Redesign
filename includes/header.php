@@ -55,8 +55,8 @@
 										<li class="bordernone pad_last"><a href="/events">SHOWS</a></li>
 										<li><a href="/music">MUSIC</a></li>
 										<li><a href="/photos">PHOTOS</a></li>
-										<li class="list2"><a href="/band">CONTACT</a></li>
-										<li class="list"><a href="<?php echo SIXERTOWN_URL; ?>" target="_blank">KELLOGGTOWN</a></li>
+										<li class="list"><a href="/band">CONTACT</a></li>
+										<li class="list2"><a href="<?php echo SIXERTOWN_URL; ?>" target="_blank">KELLOGGTOWN</a></li>
 										<li class="last"><a href="<?php echo STORE_URL; ?>" target="_blank">STORE</a></li>
 									</ul>
 									<div class="clear"></div>
