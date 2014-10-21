@@ -250,7 +250,7 @@ body										{background-attachment:fixed; height:100%; }
 .newscontent .sale							{width:auto; font-size:20px;}
 .newscontent .sale a						{font-size:20px;}
 .skmerchcontentin ul li						{width:94px;}
-#logo										{left: 28.5%;}
+#logo										{left: 26.5%;}
 .videocontent								{padding:8.3% 4.7% 8%;}
 .videocontent h2							{font-size:13px;}
 .skmerchcontentin							{padding: 8.3% 4% 6% 4.7%;}
@@ -295,9 +295,9 @@ body										{background-attachment:fixed; height:100%; }
 .navbar-default								{padding: 0 0 0 0% !important;}
 #nav										{width:730px !important; margin:0 auto; display:block;}
 #nav ul										{width:100% !important;}
-#nav ul li.list								{padding:0 0 0 10px;}
-#nav ul li.list2							{padding:0 10px 0 280px; border-right:1px solid #1c1c1d; border-left:0 none;}
-#logo										{left: 43% !important; width: 25%;}
+#nav ul li.list								{padding:0 0 0 280px;}
+#nav ul li.list2							{padding:0 0 0 10px; border-left:1px solid #1c1c1d;}
+#logo										{left: 33% !important; width: 25%;}
 .main_contentin {
     padding: 41px 0 25px 0;
 }

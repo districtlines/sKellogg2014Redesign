@@ -52,7 +52,7 @@
 								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 									<ul class="nav navbar-nav navbar-right">
 										<!-- <li class="bordernone pad_last"><a href="/">HOME</a></li> -->
-										<li class="bordernone pad_last"><a href="/events">SHOWS</a></li>
+										<li class="bordernone pad_last"><a href="/events">TOUR</a></li>
 										<li><a href="/music">MUSIC</a></li>
 										<li><a href="/photos">PHOTOS</a></li>
 										<li class="list"><a href="/band">CONTACT</a></li>
