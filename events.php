@@ -85,8 +85,8 @@
 			<tr class="hide" id="extraDetails-<?php echo $event['id']; ?>">
 				<td colspan="5">
 					<?php if($event['age'] == 'null'){ echo " "; }else{ echo "Age: ".$event['age']."<br>"; } ?>
-					<?php echo "Show: ".date('g:ia', $event['time'])."<br>"; ?>
-					<?php echo "Door: ".date('g:ia', $event['door_time'])."<br><br>"; ?>
+					<?php echo "Show: ".date('g:ia', strtotime($event['time']))."<br>"; ?>
+					<?php echo "Door: ".date('g:ia', strtotime($event['door_time']))."<br><br>"; ?>
 
 					<?php echo nl2br($event['details']); ?>
 				</td>
