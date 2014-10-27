@@ -210,6 +210,7 @@ if(strstr($field, "time") || strstr($field, "date")) {
 				$value = strtotime($value);
 				}
 */
+				$value = strip_tags($value);
 				$_data[$field] = $value;
 			}
 		}
@@ -222,9 +223,8 @@ if(strstr($field, "time") || strstr($field, "date")) {
 			//put together the data
 			foreach ($data as $field => $value) {
 				//$value = mysql_real_escape_string($value);
-				$sql_data[] = '`' . $field . '` = \'' . $value . '\'';
+				$sql_data[] = '`' . $field . '` = "' . $value . '"';
 			}
-
 			mysql_query('UPDATE `' . $table . '` SET ' . implode(',',$sql_data) . ' WHERE ' . $where) or die(mysql_error() . ' -- ' . $sql);
 			return true;
 		} else {

@@ -26,7 +26,7 @@
 		validate('sticky', false);
 		validate('showing', false);
 		validate('soldout', false);
-// 		validate('last_tickets', false);
+		validate('last_tickets', false);
 		validate('venue_url',false);
 		validate('show_time',false,array(
 			
@@ -132,7 +132,7 @@
 						$querySticky = mysql_query($sqlSticky) or die(mysql_error());
 				
 				}
-				
+
 				if($_SESSION['form_data']['sticky'] == "1" && !$newEntry)
 				{
 					$sql = "SELECT * FROM stickies WHERE type_id='$typeID' and type='events'";
@@ -150,7 +150,7 @@
 					
 					if($_SESSION['form_data']['showing'] == "1")
 					{
-					$recentSql = "INSERT INTO recent_activity (name,created,modified,type,type_id,sticky) VALUES ('" . $_SESSION['form_data']['name'] . "', NOW(), NOW(),'events','" . $typeID . "','" . $_SESSION['form_data']['sticky'] . "')";
+					$recentSql = "INSERT INTO recent_activity (title,created,modified,type,type_id,sticky) VALUES ('" . $_SESSION['form_data']['name'] . "', NOW(), NOW(),'events','" . $typeID . "','" . $_SESSION['form_data']['sticky'] . "')";
 					$recentQuery = mysql_query($recentSql) or die(mysql_error());
 					}
 					//END
@@ -288,15 +288,13 @@
 			
 			<td class="<?= isset($_SESSION['form_error']['soldout']) ? ' error' : '' ?> checkbox"><? input_checkbox('soldout', '1') ?></td>
 		</tr>
-        
-       <!--
- <tr>
+		
+		<tr>
 			<th>Last Tickets</th>
 			
 			<td class="<?= isset($_SESSION['form_error']['last_tickets']) ? ' error' : '' ?> checkbox"><? input_checkbox('last_tickets', '1') ?></td>
 		</tr>
--->
-        <tr>
+		<tr>
 			<th>Sticky</th>
 			
 			<td class="<?= isset($_SESSION['form_error']['sticky']) ? ' error' : '' ?> checkbox"><? input_checkbox('sticky', '1') ?></td>
