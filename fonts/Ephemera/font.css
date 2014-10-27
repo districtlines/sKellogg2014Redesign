@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'LHF Ephemera';
+  src: url('LHF Ephemera Regular.eot'); /* IE9 Compat Modes */
+  src: url('LHF Ephemera Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('LHF Ephemera Regular.woff') format('woff'), /* Modern Browsers */
+       url('LHF Ephemera Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('LHF Ephemera Regular.svg#6d9922d0c19623b197b31cdd4f197dbd') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+
+

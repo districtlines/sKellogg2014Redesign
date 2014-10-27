@@ -50,7 +50,7 @@
 						$contacts = $SQL->fetchAssoc("SELECT * FROM `contacts` WHERE `type` = ".$type['id']." ORDER BY `sort` ASC");
 						
 						if(count($contacts)){
-							echo "<div class='col-lg-4 col-xs-6 col-md-4 col-sm-4'> ";
+							echo "<div class='col-lg-3 col-xs-6 col-md-4 col-sm-4 contact-container'> ";
 							echo "<p class='contact-type'>".$type['type']."</p>";		
 								
 							foreach($contacts as $contact){		
