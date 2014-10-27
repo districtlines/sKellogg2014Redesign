@@ -45,16 +45,13 @@
 				<th>Date</th>
 				<th>Venue</th>
 				<th>Location</th>
-				<th>Age</th>
-				<th>Show</th>
-				<th>Door</th>
 				<th></th>
 				<th><i class="fa fa-info-circle"></i></th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php foreach($currentShowsRes as $event) : ?>
-			<tr class="table-tooltip" data-toggle="tooltip" data-placement="left" title="Click to view more data!" data-details="<?php echo $event['id']; ?>">
+			<tr class="table-tooltip" data-toggle="tooltip" data-placement="top" title="Click to view more data!" data-details="<?php echo $event['id']; ?>">
 				<td><?php echo date('m/d/Y',$event['date']);?></td>
 				<td>
 					<a href="<?php echo $row['venue_url'] ? $row['venue_url'] : ''; ?>" target="_blank">
@@ -62,9 +59,6 @@
 					</a>
 				</td>
 				<td><?php echo $event['city']; ?></td>
-				<td><?php if($event['age'] == 'null'){ echo " "; }else{ echo $event['age']; } ?></td>
-				<td><?php echo date('g:ia', $event['time']); ?></td>
-				<td><?php echo date('g:ia', $event['door_time']); ?></td>
 				<td>
 					<?php if($event['tickets_url'] && !$event['soldout'] && !$event['last_tickets']) { ?>
 					<a class="btn btn-default btn-xs" target="_blank" href="<?=$event['tickets_url'];?>">BUY</a>
@@ -89,8 +83,12 @@
 				<td class="caret-col"><i class="fa fa-caret-down"></i></td>
 			</tr>
 			<tr class="hide" id="extraDetails-<?php echo $event['id']; ?>">
-				<td colspan="8">
-					<?php echo nl2br(strip_tags($event['details'])); ?>
+				<td colspan="5">
+					<?php if($event['age'] == 'null'){ echo " "; }else{ echo "Age: ".$event['age']."<br>"; } ?>
+					<?php echo "Show: ".date('g:ia', $event['time'])."<br>"; ?>
+					<?php echo "Door: ".date('g:ia', $event['door_time'])."<br><br>"; ?>
+
+					<?php echo nl2br($event['details']); ?>
 				</td>
 			</tr>
 			<?php endforeach; ?>
@@ -111,7 +109,7 @@
 		</thead>
 		<tbody>
 			<?php foreach($pastShowsRes as $event) : ?>
-			<tr class="table-tooltip" data-toggle="tooltip" data-placement="left" title="Click to view the setlist!" data-details="<?php echo $event['id']; ?>">
+			<tr class="table-tooltip" data-toggle="tooltip" data-placement="top" title="Click to view the setlist!" data-details="<?php echo $event['id']; ?>">
 				<td><?php echo date('m/d/Y',$event['date']);?></td>
 				<td>
 					<a href="<?php echo $row['venue_url'] ? $row['venue_url'] : '#'; ?>" target="_blank">
@@ -148,8 +146,8 @@
     // grab rendered/parsed pagination markup
     $markup = $pagination->parse();
     echo $markup;
-
 ?>
+
 </div>
 
 <script type="text/javascript">
