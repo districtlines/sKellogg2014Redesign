@@ -66,10 +66,12 @@
 				<td><?php echo date('g:ia', $event['time']); ?></td>
 				<td><?php echo date('g:ia', $event['door_time']); ?></td>
 				<td>
-					<?php if($event['tickets_url'] && !$event['soldout']) { ?>
+					<?php if($event['tickets_url'] && !$event['soldout'] && !$event['last_tickets']) { ?>
 					<a class="btn btn-default btn-xs" target="_blank" href="<?=$event['tickets_url'];?>">BUY</a>
+					<?php } else if($event['tickets_url'] && !$event['soldout'] && $event['last_tickets']) { ?>
+					<a class="btn btn-warning btn-xs" target="_blank" href="<?=$event['tickets_url'];?>">Last Tickets</a>
 					<?php } else if($event['tickets_url'] && $event['soldout']) { ?>
-					<span class="soldout hide normalize-btns">Sold Out</span>
+					<span class="soldout normalize-btns btn btn-danger btn-xs">Sold Out</span>
 					<? } else { ?>
 					<div class="notforsale">Not For Sale</div>
 	<!-- 						<div class="clear"></div> -->

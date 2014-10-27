@@ -26,6 +26,7 @@
 		validate('sticky', false);
 		validate('showing', false);
 		validate('soldout', false);
+// 		validate('last_tickets', false);
 		validate('venue_url',false);
 		validate('show_time',false,array(
 			
@@ -288,6 +289,13 @@
 			<td class="<?= isset($_SESSION['form_error']['soldout']) ? ' error' : '' ?> checkbox"><? input_checkbox('soldout', '1') ?></td>
 		</tr>
         
+       <!--
+ <tr>
+			<th>Last Tickets</th>
+			
+			<td class="<?= isset($_SESSION['form_error']['last_tickets']) ? ' error' : '' ?> checkbox"><? input_checkbox('last_tickets', '1') ?></td>
+		</tr>
+-->
         <tr>
 			<th>Sticky</th>
 			
