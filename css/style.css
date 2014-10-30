@@ -159,9 +159,9 @@ h2.page-title								{font-family: 'Open Sans', sans-serif; font-size:14px; colo
 }
 
 .item{
-	margin-bottom: 10px;
-	width: 187px;
-	height: 133px;
+/* 	margin-bottom: 10px; */
+	width: 160px;
+	height: 170px;
 }
 
 .item.large {
