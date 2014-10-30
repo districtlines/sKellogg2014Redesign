@@ -223,7 +223,7 @@
 		
 		<tr>
 			<th>Date</th>
-			<td class="<?= isset($_SESSION['form_error']['date']) ? ' error' : '' ?>"><? input_text('date','','class="date-pick"') ?></td>
+			<td class="<?= isset($_SESSION['form_error']['date']) ? ' error' : '' ?>"><? input_text('date','',' class="date-pick"') ?></td>
 		</tr>
 		
 	
