@@ -52,7 +52,7 @@ body										{color:#b1b1b1; font-family:"Arial", Verdana, Tahoma; font-size:12
 
 /* ------------------ HEADER HERE -------------------*/
 .headerin									{padding:16px 0 32px 0; position:relative;}
-#logo										{width:270px; position:absolute; left:30.2%; top:0;}
+#logo										{width:270px; position:absolute; left:30.2%; top:0; z-index: 10}
 /* ---------------------------------------------------------*/
 
 
