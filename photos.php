@@ -21,7 +21,7 @@
 		
 			<div class="item">
 				<img class="thumb" width="100%" height="100%" src="<?=ROOT?>/uploads/photos/<?=$p['id'];?>/<?=$p['thumbnail'];?>" />
-				<img class="full hide" width="100%" height="100%" src="<?=ROOT?>/uploads/photos/<?=$p['id'];?>/<?=$p['photo'];?>" />		
+				<img class="full hide" width="100%" height="100%" src="<?=ROOT?>/uploads/photos/<?=$p['id'];?>/<?= str_replace('full_', '', $p['photo']);?>" />
 			</div>
 		
 
@@ -30,13 +30,6 @@
 	</div>
 </div>
 </div>
-
-
-<?php include('./includes/footer.php'); ?>
-
-<style>
-
-</style>
 
 <script type="text/javascript">
 
@@ -99,7 +92,7 @@ $(function(){
   $container.isotope({
     itemSelector: '.item',
     masonry: {
-      columnWidth: 15
+      columnWidth: 160
     },
     getSortData : {
       selected : function( $item ){
@@ -139,3 +132,5 @@ $(function(){
 });
 
 </script>
+
+<?php include('./includes/footer.php'); ?>
