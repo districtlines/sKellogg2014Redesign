@@ -6,7 +6,7 @@
 	include('./includes/header.php');
 	
 	$photos = $SQL->fetchAssoc("SELECT * FROM photos WHERE album_id = 21");
-	$_SERVER['DOCUMENT_ROOT'] = 'http://dev.stephenkellogg.com';
+	
 
 ?>
 
