@@ -30,7 +30,6 @@
 		</div>
 	</div>
 	<?php if(PLEDGE_URL !== null && PLEDGE_URL != '' && PLEDGE_URL != 'null') { ?>
-	<?php var_dump(PLEDGE_URL); ?>
 	<div class="widget-bg">		
 		<div class="campaign widget">
 			<h2>CHECK OUT SK'S CAMPAIGN //</h2>
