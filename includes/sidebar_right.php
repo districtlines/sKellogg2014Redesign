@@ -29,12 +29,15 @@
 			</div>
 		</div>
 	</div>
+	<?php if(PLEDGE_URL !== null && PLEDGE_URL != '' && PLEDGE_URL != 'null') { ?>
+	<?php var_dump(PLEDGE_URL); ?>
 	<div class="widget-bg">		
 		<div class="campaign widget">
 			<h2>CHECK OUT SK'S CAMPAIGN //</h2>
-			<a href="#"><img class="img-responsive" src="/images/pledgemusic.png" width="199" height="29" alt="Pledge music" title="Pledge music"></a>
+			<a href="<?php echo PLEDGE_URL; ?>"><img class="img-responsive" src="/images/pledgemusic.png" width="199" height="29" alt="Pledge music" title="Pledge music"></a>
 		</div>
 	</div>
+	<?php } ?>
 </div>
 
 
