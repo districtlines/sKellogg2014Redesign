@@ -129,13 +129,13 @@
 					),
 					'thumbnails' => array(
 						'thumb' => array(
-							'width' => 187,
-							'height' => 134,
+							'width' => 160,
+							'height' => 170,
 							'scale_type' => 'scale-crop2'
 						),
 						'full' => array(
-							'width' => 560,
-							'height' => 400,
+							'width' => 815,
+							'height' => 680,
 							'scale_type' => 'scale-crop2'
 						)
 					),
@@ -246,7 +246,7 @@
 		</tr>
 		
 		<tr>
-			<th>Photo</th>
+			<th>Photo <small>815x680 (wxh)</small></th>
 			<td class="<?= isset($_SESSION['form_error']['photo']) ? ' error' : '' ?>"><? input_file('photo') ?></td>
 		</tr>
 					     	
