@@ -494,16 +494,11 @@ body										{background-attachment:fixed; height:100%; }
 	
 }
 
+#current-shows a {
+	text-decoration: underline;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+#current-shows a.facebookicon,
+#current-shows a.twittericon {
+	font-size: 18px;
+}

@@ -51,25 +51,28 @@
 		</thead>
 		<tbody>
 			<?php foreach($currentShowsRes as $event) : ?>
-			<tr class="table-tooltip" data-toggle="tooltip" data-placement="top" title="Click to view more data!" data-details="<?php echo $event['id']; ?>">
+			<tr class="table-tooltip" data-toggle="tooltip" data-placement="top" title="Click to view more info!" data-details="<?php echo $event['id']; ?>">
 				<td><?php echo date('m/d/Y',$event['date']);?></td>
 				<td>
-					<a href="<?php echo $row['venue_url'] ? $row['venue_url'] : ''; ?>" target="_blank">
+					<?php
+						if( isset($event['venue_url']) && !empty($event['venue_url']) && $event['venue_url'] != 'null' ) { ?>
+					<a href="<?php echo $event['venue_url']; ?>" target="_blank">
 					<?php echo $event['venue']; ?>
 					</a>
+					<?php } else { ?>
+					<?php echo $event['venue']; ?>
+					<?php } ?>
 				</td>
 				<td><?php echo $event['city']; ?></td>
 				<td>
-					<?php if($event['tickets_url'] && !$event['soldout'] && !$event['last_tickets']) { ?>
+					<?php if($event['tickets_url'] && !$event['soldout'] && !$event['last_tickets'] && 0) { ?>
 					<a class="btn btn-default btn-xs" target="_blank" href="<?=$event['tickets_url'];?>">BUY</a>
 					<?php } else if($event['tickets_url'] && !$event['soldout'] && $event['last_tickets']) { ?>
 					<a class="btn btn-warning btn-xs" target="_blank" href="<?=$event['tickets_url'];?>">Last Tickets</a>
 					<?php } else if($event['tickets_url'] && $event['soldout']) { ?>
 					<span class="soldout normalize-btns btn btn-danger btn-xs">Sold Out</span>
 					<? } else { ?>
-					<div class="notforsale">Not For Sale</div>
-	<!-- 						<div class="clear"></div> -->
-						
+					<!-- <div class="notforsale">Not For Sale</div> -->
 					<? }?>
 					<?php if($event['fb_event_url']) { ?>
 					<a class="btn btn-default btn-xs <?=$event['soldout'] ? 'sold-out' : '';?>" target="_blank" href="<?=$event['fb_event_url'];?>">RSVP</a>
