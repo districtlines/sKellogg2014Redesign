@@ -6,6 +6,7 @@
 	include('./includes/header.php');
 	
 	$photos = $SQL->fetchAssoc("SELECT * FROM photos WHERE album_id = 21");
+	$_SERVER['DOCUMENT_ROOT'] = 'http://dev.stephenkellogg.com';
 
 ?>
 
@@ -15,7 +16,7 @@
 	<div id="container">
 <?php	foreach($photos as $p){ 
 	
-		if(file_exists($_SERVER['DOCUMENT_ROOT']."/dev/uploads/photos/".$p['id']."/".$p['thumbnail']) && file_exists( $_SERVER['DOCUMENT_ROOT']."/dev/uploads/photos/".$p['id']."/".$p['photo']) ){
+		if(file_exists($_SERVER['DOCUMENT_ROOT']."/uploads/photos/".$p['id']."/".$p['thumbnail']) && file_exists( $_SERVER['DOCUMENT_ROOT']."/uploads/photos/".$p['id']."/".$p['photo']) ){
 ?>
 		
 			<div class="item">
