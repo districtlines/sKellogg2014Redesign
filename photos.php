@@ -5,7 +5,7 @@
 	$layout = 'large-left-col';
 	include('./includes/header.php');
 	
-	$photos = $SQL->fetchAssoc("SELECT * FROM photos ORDER BY RAND() LIMIT 50");
+	$photos = $SQL->fetchAssoc("SELECT * FROM photos WHERE album_id = 21");
 	
 
 ?>
