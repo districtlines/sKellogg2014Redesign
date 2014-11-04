@@ -27,8 +27,10 @@
 	
 	<link rel="stylesheet" type="text/css" href="./css/layout.css" />
 	<link rel="stylesheet" type="text/css" href="./css/datepicker.css" />
+	<link rel="stylesheet" type="text/css" href="./js/fancybox/source/jquery.fancybox.css" />
 	
-	<script type="text/javascript" src="./js/jquery-1.2.3.pack.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="./js/date.js"></script>
 	<script type="text/javascript" src="./js/jquery.datepicker.js"></script>
 	<script type="text/javascript" src="./js/tablednd.js"></script>
@@ -36,11 +38,17 @@
 <!--	<script type="text/javascript" src="./js/tiny_mce/tiny_mce.js"></script>
 	<script type="text/javascript" src="./js/default_rte.js"></script> -->
 	
-	<script type="text/javascript" src="./js/nicEdit.js"></script>	
+	<script type="text/javascript" src="./js/nicEdit.js"></script>
+	<script type="text/javascript" src="./js/fancybox/source/jquery.fancybox.js"></script>
 	<script type="text/javascript">
 		bkLib.onDomLoaded(function() {
-			var tarea = new nicEditor({fullPanel : true}).panelInstance('ignore_tf',{hasPanel : true});
-			var tarea2 = new nicEditor({fullPanel : true}).panelInstance('ignore_tf2',{hasPanel : true});
+			if($('#ignore_tf').length > 0) {
+				var tarea = new nicEditor({fullPanel : true}).panelInstance('ignore_tf',{hasPanel : true});
+			}
+			
+			if($('#ignore_tf2').length > 0) {
+				var tarea2 = new nicEditor({fullPanel : true}).panelInstance('ignore_tf2',{hasPanel : true});
+			}
 		});
 		//bkLib.onDomLoaded(function() { nicEditors.findEditor('ignore_tf')});
 	</script>

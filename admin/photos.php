@@ -323,6 +323,7 @@
 				<th><?= ucwords(str_replace('_',' ',$field)) ?></th>
 				<? } ?>
 				<th></th>
+				<th></th>
 			</tr>
 			
 			<?
@@ -341,6 +342,9 @@
 				<td width="<?= floor(90 / count($_listing_fields)) ?>%"><a href="./<?= section ?>.php?edit=<?= $row['id'] ?>&album=<?= $album_id ?>"><?= shorten(strip_tags($row[$field]), floor(60 / count($_listing_fields))) ?></a></td>
 				<? } ?>
 				<td><a href="cover.php?galleryID=<?=$album_id?>&coverID=<?=$row['id']?>" title="Set as cover image">Set as Cover</a></td>
+				<td>
+					<a class="fancybox" href="/uploads/photos/<?php echo $row['id']; ?>/<?php echo str_replace('full_', '', $row['photo']); ?>">Preview</a>
+				</td>
 			</tr>
 			
 			<?
@@ -369,7 +373,9 @@
 		      $.get('ajax_sort.php', {'table': '<?= $_table ?>', 'ids[]': ids});
 				}
 			});
-		
+			
+			$(".fancybox").fancybox();
+			
 		});
 	</script>
 	

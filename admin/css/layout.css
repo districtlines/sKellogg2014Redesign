@@ -12,7 +12,7 @@ A IMG {
 
 
 DIV#container {
-	width: 800px;
+	width: 1140px;
 }
 
 
@@ -30,9 +30,14 @@ DIV#content {
 }
 
 
+DIV#content {
+	width: 940px;
+}
+
 
 DIV#menu {
 	border-right: 2px #000 solid;
+	width: 150px;
 }
 
 	DIV#menu UL {
@@ -170,7 +175,7 @@ TABLE#form_table {
 
 
 TABLE#listing_table {
-	width: 600px;
+	width: 100%;
 	margin: 10px 0;
 }
 
