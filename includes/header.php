@@ -68,10 +68,10 @@
 								<ul>
 									<li><a href="<?php echo FACEBOOK_URL; ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
 									<li><a href="<?php echo TWITTER_URL; ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+									<li><a href="<?php echo INSTAGRAM_URL; ?>"><i class="fa fa-instagram"></i></a></li>
 									<li><a href="<?php echo YOUTUBE_URL; ?>" target="_blank"><i class="fa fa-youtube"></i></a></li>
-									<li><a href="#"><i class="fa fa-spotify"></i></a></li>
-									<li><a href="#"><i class="fa fa-soundcloud"></i></a></li>
+									<li><a href="<?php echo SPOTIFY_URL; ?>"><i class="fa fa-spotify"></i></a></li>
+									<li><a href="<?php echo SOUNDCLOUD_URL; ?>"><i class="fa fa-soundcloud"></i></a></li>
 								</ul>
 								<div class="clear"></div>
 							</div>
