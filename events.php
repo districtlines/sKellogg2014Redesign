@@ -8,7 +8,7 @@
 	$today = strtotime(date('m/d/Y'));
 	$currentShowsRes = $SQL->fetchAssoc("SELECT * FROM events WHERE date >= '{$today}' AND show_date <= NOW() ORDER BY date ASC");
 	
-	if(!$_GET['page']) {
+	if(!isset($_GET['page'])) {
 		$page = 1;
 	} else {
 		$page = $_GET['page'];
@@ -65,7 +65,7 @@
 				</td>
 				<td><?php echo $event['city']; ?></td>
 				<td>
-					<?php if($event['tickets_url'] && !$event['soldout'] && !$event['last_tickets'] && 0) { ?>
+					<?php if($event['tickets_url'] != 'null' && !$event['soldout'] && !$event['last_tickets']) { ?>
 					<a class="btn btn-default btn-xs" target="_blank" href="<?=$event['tickets_url'];?>">BUY</a>
 					<?php } else if($event['tickets_url'] && !$event['soldout'] && $event['last_tickets']) { ?>
 					<a class="btn btn-warning btn-xs" target="_blank" href="<?=$event['tickets_url'];?>">Last Tickets</a>
