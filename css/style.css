@@ -502,3 +502,52 @@ body										{background-attachment:fixed; height:100%; }
 #current-shows a.twittericon {
 	font-size: 18px;
 }
+
+/************/
+/*! SLIDER  */
+/************/
+#slider_container {
+	margin-bottom:5px;
+	position: relative;
+	height:131px;
+	margin-bottom:16px;
+	width:255px;
+	overflow: hidden;
+}
+
+#slider_pagination {
+	position: absolute;
+	bottom:0;
+	right:0; 
+	z-index:10;
+	margin-bottom: 3px;
+	margin-right:10px;
+}
+
+#slider_pagination ul {
+	display: inline;
+	list-style-type: none;  
+}
+
+#slider_pagination ul li {
+	float:left;
+}
+
+.slide img {
+	border: 1px solid #000000;
+}
+
+#slider_pagination ul li a{
+	height:10px;
+	width:10px;
+	background-color:#fc0d00;
+	margin-right:5px;
+	text-align: center;
+	display:block;
+	text-indent: -9999px;
+	outline: none !important;
+}
+
+#slider_pagination ul li.activeSlide a, #slider_pagination ul li a:hover {
+	background-color: #000000;
+}

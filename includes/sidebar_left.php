@@ -1,4 +1,5 @@
 <?php $instagram = $Site->Instagram; ?>
+<?php $slides = $Site->Slides; ?>
 <div class="main_contentinleft col-lg-3 col-lg-pull-9 col-md-4 col-sm-4">
 	<div class="widget-bg">
 		<div class="twittercontent widget">
@@ -18,7 +19,33 @@
 				<?php ++$count; } ?>
 			</div>
 		</div>
-	</div>	
+	</div>
+	
+	<div id="slider_container">
+		<div id="slider">
+		<?php 
+			
+			if( isset($slides) && $slides != false) {
+				foreach($slides as $slide) {
+		?>
+			<div class="slide">
+				<?php if(!empty($slide['link'])) : ?>
+				<a href="<?=$slide['link'];?>" title="<?=$slide['name'];?>">
+				<?php endif; ?>
+					<img width="255" height="131" src="<?=ROOT?>/uploads/slideshow/<?=$slide['id']?>/<?=$slide['image']?>" />
+				<?php if(!empty($slide['link'])) : ?>
+				</a>
+				<?php endif; ?>
+			</div>
+			
+		<?php } } ?>
+		</div> <!-- slider -->
+		<div id="slider_pagination">
+			<ul>
+			</ul>
+			<div class="clear"></div>
+		</div> <!-- slider_pagination -->
+	</div> <!-- slider_container -->
 	<span class="clear"></span>
 </div>
 
@@ -31,5 +58,19 @@
 			media : {}
 		}
 	});
+	
+	(function($) {
+		$('#slider').cycle({ 
+	    	fx: 'fade', 
+	    	speed: 2000,
+	    	pause: true,
+	    	pauseOnPagerHover: true,
+	    	timeout: 4000,
+	    	pager:  '#slider_pagination ul', 
+    		pagerAnchorBuilder: function(idx, slide) { 
+		        return '<li><a href="#">' + (idx+1) + '</a></li>'; 
+		    } 
+		});
+	})(jQuery);
 
 </script>
