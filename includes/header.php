@@ -72,6 +72,7 @@
 									<li><a href="<?php echo YOUTUBE_URL; ?>" target="_blank"><i class="fa fa-youtube"></i></a></li>
 									<li><a href="<?php echo SPOTIFY_URL; ?>"><i class="fa fa-spotify"></i></a></li>
 									<li><a href="<?php echo SOUNDCLOUD_URL; ?>"><i class="fa fa-soundcloud"></i></a></li>
+									<li><a href="<?php echo TUMBLR_URL; ?>"><i class="fa fa-tumblr"></i></a></li>
 								</ul>
 								<div class="clear"></div>
 							</div>
