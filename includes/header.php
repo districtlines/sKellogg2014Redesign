@@ -17,7 +17,7 @@
 <link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.2.0/font-awesome-4.2.0/css/font-awesome.css">
 <link href="/css/style.css" rel="stylesheet" type="text/css" media="all">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<link rel="stylesheet" href="/js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 
 <!-- END: STYLESHEET -->
 
