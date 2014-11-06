@@ -18,9 +18,7 @@ html, body {
 	background-color: #000;
 	font-family: 'Trade Gothic LT Std';
     text-transform: uppercase;
-    	height: 100%;
-
-
+    height: 100%;
 }
 
 .container {
@@ -28,7 +26,6 @@ html, body {
 	background-attachment: fixed;
 	background-size: cover;
 	height: 100%;
-	
 }
 
 /*=========== header =========== */
@@ -41,7 +38,6 @@ header p {
 	margin-top: 10px;
 	font-size: 20px;
 	font-family: 'Trade Gothic LT Std';
-
 }
 
 header a img{
@@ -64,22 +60,26 @@ header a img{
 /* 	background-color: red;	 */
 }
 
-.list .dates p:nth-child(even){
+.list .dates div:nth-child(even) p{
 	color: #74859d;
 }
+
 	
 .list .dates p{
-	margin: 0px;
+	margin: 11px 0;
 	font-size: 13px;
-	
 }
 
+.list .dates span{
+	background-color: rgba(152, 48, 48, .8);
+	margin: -3px -10px;
+    padding: 2px 32% 0;
+    position: absolute;
+    text-shadow: 2px 2px #000;
+}
 
 /*============ links ============= */
 
-.links{
- 	margin-top: 211px;
-} 
 
 .links img{
 	width: 100px;
@@ -97,20 +97,26 @@ header a img{
 	width: 140px;
 }
 
-
-
 .links a:hover{
 	color: #fff;
 	text-decoration: none;
 }
 
-
+.site{
+	margin-top:-8px;
+}
 
 /*================ Media Queries ============*/
 
 @media(max-width:400px){
-	header {
-		margin: 20px 80px 0;
+
+	.list .dates{
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	
+	.list .dates:first-child{
+		margin-bottom: -10px;
 	}
 	
 	header p {
@@ -119,53 +125,92 @@ header a img{
 	}
 	header a img{
 		width: 200px;
-		margin-left: 20px
+		margin: 0 auto;
+	}
+		
+	.list .dates p {
+	    font-size: 15px;
+	    text-align: center;
 	}
 	
-	
-	
-	.list .dates p{
-		font-size: 13px;
+	.list .dates span {
+	    text-align: center;
+	    width: 100%;
 	}
 	
-	}
+	.links-container{
+		width: 150px;
+		margin: 0 auto;
+	}	
+}
 
 @media(max-width:767px){
-	.links{
-	 	margin-top: 0px;
+	.list .dates{
+		padding-top: 0;
+		padding-bottom: 0;
 	}
-	.links a{
-		margin: 10px auto;		
+	
+	.list .dates:first-child{
+		margin-bottom: -10px;
+	}
+
+	.list .dates p {
+	    font-size: 15px;
+	    text-align: center;
+	}
+	
+	.list .dates span {
+	    text-align: center;
+	    width: 100%;
+	}	
+	
+	.links-container{
+		width: 150px;
+		margin: 0 auto;
 	}
 }
 @media(min-width:768px){
 
-	.links{
-	 	margin-top: 0px;
+
+	.links-container{
+		margin-top: 0px;
 	}
 	
-	.links a{
-		margin: 10px auto;		
+	body{
+		background: url('../images/bg.png') no-repeat right;
+		background-attachment: fixed;
+		background-size: cover;
+		height: 100%;
+	}
+	.container {
+		background-image:none;
 	}
 	
-	.site{
-		margin-top:0px;
-	}
+	.links-container{
+		width: 150px;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top:0px
 	
+	}
 }
 @media(min-width:992px){
 	.content{
 		width: 80%;	
 	}
-	
-	.links{
-	 	margin-top: 211px;
-	}	
-	
-	.site{
-		margin-top:214px;
+		
+	.links-container{
+		margin-top: 0px;
 	}
 
+	.links-container{
+		margin-top: 0px;
+	}
 }
 
-@media(min-width:1200px){}
+@media(min-width:1200px){
+	.links-container{
+		margin-top: 330px;
+		width: 50%;
+	}
+}
