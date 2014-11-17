@@ -154,17 +154,19 @@
 </div>
 
 <script type="text/javascript">
-	$('.table-tooltip').tooltip();
-	$('#current-shows tbody tr').on('click', function() {
-		var $t = $(this);
-		var $id = $t.data('details');
-		$t.find('.caret-col > i').toggleClass('fa-caret-up fa-caret-down');
-		$('#extraDetails-'+$id).toggleClass('hide');
-	});
-	$('#past-events tbody tr').on('click', function() {
-		var $t = $(this);
-		var $id = $t.data('details');
-		$('#setList-'+$id).toggleClass('hide');
-	});
+	(function($) {
+		$('.table-tooltip').tooltip();
+		$('body').on('click', '#current-shows tbody tr', function() {
+			var $t = $(this);
+			var $id = $t.attr('data-details');
+			$t.find('.caret-col > i').toggleClass('fa-caret-up fa-caret-down');
+			$('#extraDetails-'+$id).toggleClass('hide');
+		});
+		$('body').on('click', '#past-events tbody tr', function() {
+			var $t = $(this);
+			var $id = $t.attr('data-details');
+			$('#setList-'+$id).toggleClass('hide');
+		});
+	})(jQuery);
 </script>
 <?php include('./includes/footer.php'); ?>
