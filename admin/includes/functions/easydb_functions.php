@@ -210,7 +210,7 @@ if(strstr($field, "time") || strstr($field, "date")) {
 				$value = strtotime($value);
 				}
 */
-				$value = strip_tags($value);
+				$value = strip_tags($value, '<p><table><tr><td><tbody><thead><th><tfoot><a><b><strong><i><u><s><strike><img><br><br/><span>');
 				$_data[$field] = $value;
 			}
 		}
