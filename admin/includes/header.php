@@ -43,11 +43,11 @@
 	<script type="text/javascript">
 		bkLib.onDomLoaded(function() {
 			if($('#ignore_tf').length > 0) {
-				var tarea = new nicEditor({fullPanel : true}).panelInstance('ignore_tf',{hasPanel : true});
+				var tarea = new nicEditor({fullPanel : true, iconsPath : '/admin/js/nicEditorIcons.gif'}).panelInstance('ignore_tf',{hasPanel : true});
 			}
 			
 			if($('#ignore_tf2').length > 0) {
-				var tarea2 = new nicEditor({fullPanel : true}).panelInstance('ignore_tf2',{hasPanel : true});
+				var tarea2 = new nicEditor({fullPanel : true, iconsPath : '/admin/js/nicEditorIcons.gif'}).panelInstance('ignore_tf2',{hasPanel : true});
 			}
 		});
 		//bkLib.onDomLoaded(function() { nicEditors.findEditor('ignore_tf')});
